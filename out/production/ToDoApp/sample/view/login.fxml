@@ -1,8 +1,38 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.controller.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #4a148c;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <JFXTextField focusColor="#e91e63" layoutX="211.0" layoutY="86.0" prefHeight="27.0" prefWidth="279.0" promptText="AnanasMontana" unFocusColor="#12005e" />
+            <JFXPasswordField focusColor="#e91e63" layoutX="211.0" layoutY="158.0" prefHeight="27.0" prefWidth="279.0" promptText="❁❁❁❁❁❁❁❁" unFocusColor="#12005e" />
+            <Label layoutX="331.0" layoutY="14.0" text="Login">
+               <font>
+                  <Font name="Nougat" size="23.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="313.0" layoutY="247.0" prefHeight="29.0" prefWidth="114.0" style="-fx-background-color: #e91e63; -fx-background-radius: 20px;" text="Next" textFill="WHITE">
+               <font>
+                  <Font name="Nougat" size="17.0" />
+               </font>
+            </JFXButton>
+         </children></AnchorPane>
+      <Label alignment="CENTER" layoutX="261.0" layoutY="20.0" prefHeight="17.0" prefWidth="178.0" text="CoqTail" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Nougat" size="50.0" />
+         </font>
+      </Label>
+      <JFXButton alignment="CENTER" layoutX="632.0" layoutY="34.0" style="-fx-background-color: #e91e63;" text="Sign up" textFill="WHITE">
+         <font>
+            <Font name="Nougat" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
