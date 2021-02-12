@@ -5,7 +5,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="ToDoApp" value="4e39b847-67f8-4e39-9213-e697f5c5fb39" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
