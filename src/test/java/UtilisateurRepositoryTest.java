@@ -4,8 +4,9 @@ import org.junit.jupiter.api.*;
 import sample.entity.Utilisateur;
 import sample.service.HibernateUtil;
 
-public class UtilisateurRepositoryTest {
 
+public class UtilisateurRepositoryTest {
+/*
     private static SessionFactory sessionFactory;
     private Session session;
 
@@ -66,5 +67,5 @@ public class UtilisateurRepositoryTest {
     public void closeSession() {
         if (session != null) session.close();
         System.out.println("Session closed\n");
-    }
+    }*/
 }

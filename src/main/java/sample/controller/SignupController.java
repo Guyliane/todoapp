@@ -44,6 +44,30 @@ public class SignupController {
     private JFXButton su_valider;
 
     @FXML
+    private void hBoxSelect(){
+        if(su_cb_homme.isSelected()){
+            su_cb_femme.setSelected(false);
+            su_cb_autre.setSelected(false);
+        }
+    }
+
+    @FXML
+    private void fBoxSelect(){
+        if(su_cb_femme.isSelected()){
+            su_cb_homme.setSelected(false);
+            su_cb_autre.setSelected(false);
+        }
+    }
+
+    @FXML
+    private void aBoxSelect(){
+        if(su_cb_autre.isSelected()){
+            su_cb_homme.setSelected(false);
+            su_cb_femme.setSelected(false);
+        }
+    }
+
+    @FXML
     void initialize() {
         UtilisateurService utilisateurService = new UtilisateurService();
         su_valider.setOnAction(event -> {
@@ -53,7 +77,13 @@ public class SignupController {
             utilisateur.setPseudo(su_pseudo.getText());
             utilisateur.setMotdepasse(su_motDePasse.getText());
             utilisateur.setNom(su_nom.getText());
-            utilisateur.setSexe("Homme");
+            if(su_cb_homme.isSelected()){
+                utilisateur.setSexe("Homme");
+            }else if (su_cb_femme.isSelected()){
+                utilisateur.setSexe("Femme");
+            }else if (su_cb_autre.isSelected()){
+                utilisateur.setSexe("Autre");
+            }
             utilisateurService.createUtilisateur(utilisateur);
         });
     }
