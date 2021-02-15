@@ -8,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.service.UtilisateurService;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,8 +31,6 @@ public class LoginController {
 
     @FXML
     private JFXButton loginSignupButton;
-
-    UtilisateurService userService = new UtilisateurService();
 
     @FXML
     void initialize() {
