@@ -8,9 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.entity.Utilisateur;
+import sample.repository.UtilisateurRepositoryImpl;
+import sample.service.UtilisateurService;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoginController {
@@ -32,20 +37,36 @@ public class LoginController {
     @FXML
     private JFXButton loginSignupButton;
 
+    private UtilisateurService utilisateurService = null;
+    private UtilisateurRepositoryImpl utilisateurRepository = null;
     @FXML
     void initialize() {
+        utilisateurService = new UtilisateurService();
+        utilisateurRepository = new UtilisateurRepositoryImpl();
 
        loginNextButton.setOnAction(event -> {
            String pseudo = loginUsernameTf.getText().trim();
            String motDePasse = loginPasswordTf.getText().trim();
+           Utilisateur utilisateur = new Utilisateur();
+           utilisateur.setPseudo(pseudo);
+           utilisateur.setMotdepasse(motDePasse);
 
-           if(!pseudo.equals("") || !motDePasse.equals("")) {
-               loginUser(pseudo, motDePasse);
+           ResultSet rs = utilisateurService.getUtilisateur(utilisateur);
 
-           }else{
-               System.out.println("Une erreur est survenue.");
-           }
-       });
+           int counter = 0;
+           try{
+               while(rs.next()){
+                   counter++;
+               }
+               if(counter == 1){
+                   System.out.println("Login successful!");
+                   loginUser(utilisateur.getPseudo(), utilisateur.getMotdepasse());
+               }
+               } catch (SQLException e) {
+                   e.printStackTrace();
+               }
+
+           });
 
        loginSignupButton.setOnAction(event -> {
            //Lien vers la page d'inscription

@@ -46,4 +46,42 @@ public class UtilisateurRepositoryImpl {
             }
         }
     }
+
+    public ResultSet getUtilisateur(Utilisateur utilisateur){
+        ResultSet resultSet =null;
+        Connection conn = null;
+        try {
+
+            DataSource dataSource = DataSourceProvider.getSingleDataSourceInstance();
+            conn=dataSource.getConnection();
+
+            if(!utilisateur.getPseudo().equals("") || !utilisateur.getMotdepasse().equals(""))
+            {
+                String query = "SELECT * FROM " + Const.UTILISATEURS_TABLE + " WHERE " + Const.UTILISATEURS_PSEUDO + "=?"
+                        + " AND "+ Const.UTILISATEURS_MOTDEPASSE + "=?";
+
+                PreparedStatement preparedStatement = conn.prepareStatement(query);
+                preparedStatement.setString(1, utilisateur.getPseudo());
+                preparedStatement.setString(2, utilisateur.getMotdepasse());
+
+                resultSet = preparedStatement.executeQuery();
+
+            }else
+            {
+                System.out.println("Veuillez entrer vos informations de connexion");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        /*finally {
+            try {
+                if (conn!=null){
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }*/
+        return resultSet;
+    }
 }
