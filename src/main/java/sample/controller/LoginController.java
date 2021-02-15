@@ -38,21 +38,10 @@ public class LoginController {
        loginNextButton.setOnAction(event -> {
            String pseudo = loginUsernameTf.getText().trim();
            String motDePasse = loginPasswordTf.getText().trim();
+
            if(!pseudo.equals("") || !motDePasse.equals("")) {
-                //userService.loginUser(pseudo, motDePasse);
-               FXMLLoader loader = new FXMLLoader();
-               loader.setLocation(getClass().getResource("/addItem.fxml"));
+               loginUser(pseudo, motDePasse);
 
-               try {
-                   loader.load();
-               } catch (IOException e) {
-                   e.printStackTrace();
-               }
-
-               Parent root = loader.getRoot();
-               Stage stage = new Stage();
-               stage.setScene(new Scene(root));
-               stage.showAndWait();
            }else{
                System.out.println("Une erreur est survenue.");
            }
@@ -75,5 +64,26 @@ public class LoginController {
            stage.setScene(new Scene(root));
            stage.showAndWait();
        });
+
+    }
+
+
+    private void loginUser(String pseudo, String pass){
+        //Regarder dans la db si l'user existe
+        //Transiter vers la page addItem
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/addItem.fxml"));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
 }

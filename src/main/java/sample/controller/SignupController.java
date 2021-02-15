@@ -84,7 +84,7 @@ public class SignupController {
             }else if (su_cb_autre.isSelected()){
                 utilisateur.setSexe("Autre");
             }
-            utilisateurService.createUtilisateur(utilisateur);
+            utilisateurService.inscrireUtilisateur(utilisateur);
         });
     }
 }

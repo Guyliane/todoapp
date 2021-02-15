@@ -2,7 +2,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.*;
 import sample.entity.Utilisateur;
-import sample.service.HibernateUtil;
 
 
 public class UtilisateurRepositoryTest {
