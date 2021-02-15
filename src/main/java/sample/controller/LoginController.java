@@ -38,12 +38,24 @@ public class LoginController {
     @FXML
     void initialize() {
 
-        String pseudo = loginUsernameTf.getText().trim();
-        String motDePasse = loginPasswordTf.getText().trim();
-
        loginNextButton.setOnAction(event -> {
+           String pseudo = loginUsernameTf.getText().trim();
+           String motDePasse = loginPasswordTf.getText().trim();
            if(!pseudo.equals("") || !motDePasse.equals("")) {
-                userService.loginUser(pseudo, motDePasse);
+                //userService.loginUser(pseudo, motDePasse);
+               FXMLLoader loader = new FXMLLoader();
+               loader.setLocation(getClass().getResource("/addItem.fxml"));
+
+               try {
+                   loader.load();
+               } catch (IOException e) {
+                   e.printStackTrace();
+               }
+
+               Parent root = loader.getRoot();
+               Stage stage = new Stage();
+               stage.setScene(new Scene(root));
+               stage.showAndWait();
            }else{
                System.out.println("Une erreur est survenue.");
            }
