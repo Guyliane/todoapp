@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.animations.Shaker;
 import sample.entity.Utilisateur;
 import sample.repository.UtilisateurRepositoryImpl;
 import sample.service.UtilisateurService;
@@ -61,6 +62,9 @@ public class LoginController {
                if(counter == 1){
                    System.out.println("Login successful!");
                    loginUser(utilisateur.getPseudo(), utilisateur.getMotdepasse());
+               }else{
+                   Shaker shaker = new Shaker(loginNextButton);
+                   shaker.shake();
                }
                } catch (SQLException e) {
                    e.printStackTrace();
