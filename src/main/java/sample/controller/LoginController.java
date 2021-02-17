@@ -61,7 +61,7 @@ public class LoginController {
                }
                if(counter == 1){
                    System.out.println("Login successful!");
-                   loginUser(utilisateur.getPseudo(), utilisateur.getMotdepasse());
+                   goToAddItemScene();
                }else{
                    Shaker shaker = new Shaker(loginNextButton);
                    shaker.shake();
@@ -73,32 +73,34 @@ public class LoginController {
            });
 
        loginSignupButton.setOnAction(event -> {
-           //Lien vers la page d'inscription
-           loginSignupButton.getScene().getWindow().hide();
-           FXMLLoader loader = new FXMLLoader();
-           loader.setLocation(getClass().getResource("/signup.fxml"));
-
-           try {
-               loader.load();
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
-
-           Parent root = loader.getRoot();
-           Stage stage = new Stage();
-           stage.setScene(new Scene(root));
-           stage.showAndWait();
+           goToSignupScene();
        });
 
     }
 
 
-    private void loginUser(String pseudo, String pass){
-        //Regarder dans la db si l'user existe
+    private void goToAddItemScene(){
         //Transiter vers la page addItem
-
+        loginSignupButton.getScene().getWindow().hide();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/addItem.fxml"));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
+    }
+    private void goToSignupScene(){
+        //Lien vers la page d'inscription
+        loginSignupButton.getScene().getWindow().hide();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/signup.fxml"));
 
         try {
             loader.load();

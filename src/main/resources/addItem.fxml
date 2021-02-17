@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #12005e;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddItemController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddItemController">
    <children>
-      <AnchorPane prefHeight="94.0" prefWidth="700.0" style="-fx-background-color: #e91e63;">
+      <AnchorPane prefHeight="98.0" prefWidth="700.0" style="-fx-background-color: #d81b60;">
          <children>
-            <Label alignment="CENTER" layoutX="290.0" layoutY="22.0" prefHeight="17.0" prefWidth="121.0" text="Coqtail" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="289.0" layoutY="24.0" text="Cocktail" textFill="WHITE">
                <font>
                   <Font name="Nougat" size="45.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" layoutX="221.0" layoutY="227.0" text="Aucun cocktail n'est disponible pour le moment." textFill="WHITE" />
-      <ImageView fx:id="addButton" fitHeight="59.0" fitWidth="66.0" layoutX="321.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/icons8-cocktail-100.png" />
-         </image>
-      </ImageView>
+      <Label fx:id="label_pasDispo" alignment="CENTER" layoutX="220.0" layoutY="218.0" prefHeight="17.0" prefWidth="262.0" text="Il n'y a pas de cocktail pour le moment." />
+      <JFXButton fx:id="add_bt" layoutX="331.0" layoutY="255.0" prefHeight="36.0" prefWidth="39.0" style="-fx-background-color: #d81b60; -fx-background-radius: 30;" text="+" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
