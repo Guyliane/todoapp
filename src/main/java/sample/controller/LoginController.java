@@ -71,7 +71,6 @@ public class LoginController {
                }
 
            });
-
        loginSignupButton.setOnAction(event -> {
            goToSignupScene();
        });

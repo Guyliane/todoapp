@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddItemFormController">
+   <children>
+      <JFXTextField fx:id="titre_tf" alignment="CENTER" focusColor="#ff6090" layoutX="201.0" layoutY="128.0" prefHeight="47.0" prefWidth="298.0" promptText="Votre tâche" unFocusColor="#e91e63" />
+      <JFXTextField fx:id="description_tf" alignment="CENTER" focusColor="#ff6090" layoutX="202.0" layoutY="206.0" prefHeight="47.0" prefWidth="298.0" promptText="Description" unFocusColor="#e91e63" />
+      <JFXButton fx:id="ok_bt" layoutX="321.0" layoutY="320.0" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #e91e63; -fx-background-radius: 20;" text="OK!" textFill="WHITE">
+         <font>
+            <Font name="Nougat" size="21.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutY="-1.0" prefHeight="87.0" prefWidth="700.0" style="-fx-background-color: #4a0072;">
+         <children>
+            <Label layoutX="239.0" layoutY="24.0" text="Ajouter une tâche" textFill="WHITE">
+               <font>
+                  <Font name="Nougat" size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
