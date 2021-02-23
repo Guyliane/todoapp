@@ -20,6 +20,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoginController {
+    private int userId;
+
     @FXML
     private ResourceBundle resources;
 
@@ -58,6 +60,7 @@ public class LoginController {
            try{
                while(rs.next()){
                    counter++;
+                   userId = rs.getInt("utilisateur_id");
                }
                if(counter == 1){
                    System.out.println("Login successful!");
@@ -93,6 +96,8 @@ public class LoginController {
         Parent root = loader.getRoot();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
+        AddItemController addItemController = loader.getController();
+        addItemController.setUserId(userId);
         stage.showAndWait();
     }
     private void goToSignupScene(){

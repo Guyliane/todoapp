@@ -19,6 +19,8 @@ import java.util.ResourceBundle;
 
 public class AddItemController {
 
+    private int userId;
+
     @FXML
     private ResourceBundle resources;
 
@@ -83,5 +85,9 @@ public class AddItemController {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.showAndWait();
+    }
+    public void setUserId(int userId){
+        this.userId = userId;
+        System.out.println("Id : " + this.userId);
     }
 }
