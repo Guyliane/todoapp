@@ -10,7 +10,7 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int taskid;
     private int userid;
-    private long datecreated;
+    private String datecreated;
     private String description;
     private String tasktitle;
 
@@ -31,11 +31,11 @@ public class Task {
         this.userid = userid;
     }
 
-    public long getDatecreated() {
+    public String getDatecreated() {
         return datecreated;
     }
 
-    public void setDatecreated(long datecreated) {
+    public void setDatecreated(String datecreated) {
         this.datecreated = datecreated;
     }
 
